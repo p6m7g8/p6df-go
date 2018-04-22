@@ -3,7 +3,7 @@ p6df::modules::go::deps()    {
 	ModuleDeps=()
 }
 
-p6df::modules::go::external::() {
+p6df::modules::go::external::brew() {
 
   brew install go
 }
