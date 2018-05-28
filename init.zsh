@@ -11,7 +11,7 @@ p6df::modules::go::external::brew() {
 
 p6df::modules::go::init() {
 
-#  p6df::modules::go::goenv::init
+  p6df::modules::go::goenv::init
 }
 
 p6df::modules::go::goenv::init() {
@@ -32,5 +32,3 @@ p6df::prompt::go::line() {
 
   env_version "go"
 }
-
-p6df::modules::go::init
