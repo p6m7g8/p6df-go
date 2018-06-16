@@ -11,13 +11,15 @@ p6df::modules::go::external::brew() {
 
 p6df::modules::go::init() {
 
-  p6df::modules::go::goenv::init
+  p6df::modules::go::goenv::init "$P6_DFZ_SRC_DIR"
 }
 
 p6df::modules::go::goenv::init() {
+    local dir="$1"
+
     [ -n "$DISABLE_ENVS" ] && return
 
-    GOENV_ROOT=/Users/pgollucci/.local/share/syndbg/goenv
+    GOENV_ROOT=$dir/syndbg/goenv
 
     if [ -x $GOENV_ROOT/bin/goenv ]; then
       export GOENV_ROOT
