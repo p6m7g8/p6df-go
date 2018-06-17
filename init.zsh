@@ -25,7 +25,7 @@ p6df::modules::go::goenv::init() {
       export GOENV_ROOT
       export HAS_GOENV=1
 
-      p6dfz::util::path_if $GOENV_ROOT/bin
+      p6df::util::path_if $GOENV_ROOT/bin
       eval "$(goenv init - zsh)"
     fi
 }
