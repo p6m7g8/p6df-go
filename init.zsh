@@ -9,6 +9,11 @@ p6df::modules::go::external::brew() {
   brew install go
 }
 
+p6df::modules::go::home::symlink() {
+ 
+  # XXX: ENV move
+}
+
 p6df::modules::go::init() {
 
   p6df::modules::go::goenv::init "$P6_DFZ_SRC_DIR"
