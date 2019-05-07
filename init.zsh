@@ -12,6 +12,7 @@ p6df::modules::go::external::brew() {
 p6df::modules::go::home::symlink() {
  
   # XXX: ENV move
+  true;
 }
 
 p6df::modules::go::init() {
@@ -32,6 +33,7 @@ p6df::modules::go::goenv::init() {
 
       p6df::util::path_if $GOENV_ROOT/bin
       eval "$(goenv init - zsh)"
+      p6df::util::path_if $GOPATH/bin
     fi
 }
 
