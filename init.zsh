@@ -22,6 +22,12 @@ p6df::modules::go::langs() {
 
   go get -u gopkg.in/check.v1
 
+  go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+  goenv rehash
+  (
+    cd $P6_DFZ_SRC_DIR/github.com/golangci/golangci-lint/cmd/golangci-lint ;
+    go install -ldflags "-X 'main.version=$(git describe --tags)' -X 'main.commit=$(git rev-parse --short HEAD)' -X 'main.date=$(date)'"
+  )
   goenv rehash
 }
 
@@ -49,7 +55,9 @@ p6df::modules::go::goenv::init() {
 
 p6df::prompt::gopath::line() {
 
-  echo "GOPATH: $GOPATH"
+  if [ -n "$GOPATH" ]; then
+    echo "GOPATH: [$GOPATH]  GOROOT: [$GOROOT]"
+  fi
 }
 
 p6df::prompt::go::line() {
