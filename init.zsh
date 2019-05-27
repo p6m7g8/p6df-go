@@ -3,7 +3,9 @@ p6df::modules::go::deps()    { ModuleDeps=(syndbg/goenv) }
 
 p6df::modules::go::home::symlink() {
 
-  ln -fs $P6_DFZ_SRC_DIR $GOPATH/src 
+  if [ -n "$GOPATH" ]; then
+    ln -fs $P6_DFZ_SRC_DIR $GOPATH/src 
+  fi
 }
 
 p6df::modules::go::langs() {
