@@ -64,5 +64,5 @@ p6df::prompt::gopath::line() {
 
 p6df::prompt::go::line() {
 
-  env_version "go"
+  p6_lang_version "go"
 }
