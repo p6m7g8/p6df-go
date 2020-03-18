@@ -10,8 +10,8 @@ p6df::modules::go::home::symlink() {
 
 p6df::modules::go::langs() {
 
-  goenv install 1.12.7
-  goenv global 1.12.7
+  goenv install 1.14.0
+  goenv global 1.14.0
   goenv rehash
 
   go get -u golang.org/x/tools/cmd/oracle
