@@ -64,12 +64,25 @@ p6df::modules::go::goenv::init() {
 
 p6df::prompt::gopath::line() {
 
-  if [ -n "$GOPATH" ]; then
-    echo "GOPATH: [$GOPATH]  GOROOT: [$GOROOT]"
-  fi
+  p6_go_path_prompt_info
 }
 
 p6df::prompt::go::line() {
+
+  p6_go_prompt_info
+}
+
+p6_go_path_prompt_info() {
+
+  local str=
+  if [ -n "$GOPATH" ]; then
+    str="GOPATH: [$GOPATH]  GOROOT: [$GOROOT]"
+  fi
+
+  p6_return_str "$str"
+}
+
+p6_go_prompt_info() {
 
   p6_lang_version "go"
 }
