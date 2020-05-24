@@ -10,8 +10,16 @@ p6df::modules::go::home::symlink() {
 
 p6df::modules::go::langs() {
 
-  goenv install 1.14.0
-  goenv global 1.14.0
+  (cd $P6_DFZ_SRC_DIR/syndbg/goenv ; git pull)
+
+  # nuke the old one
+  local previous=$(goenv install -l | tail -2 | head -1 | sed -e 's, *,,g')
+  pyenv uninstall -f $previous
+
+  # get the shiny one
+  local latest=$(goenv install -l | tail -1 | sed -e 's, *,,g')
+  goenv install $latest
+  goenv global $latest
   goenv rehash
 
   go get -u golang.org/x/tools/cmd/oracle
