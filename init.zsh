@@ -75,7 +75,7 @@ p6df::prompt::go::line() {
 p6_go_path_prompt_info() {
 
   local str=
-  if [ -n "$GOPATH" ]; then
+  if ! p6_string_blank "$GOPATH"; then
     str="GOPATH: [$GOPATH]  GOROOT: [$GOROOT]"
   fi
 
