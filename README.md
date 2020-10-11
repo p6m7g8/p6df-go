@@ -6,7 +6,6 @@
 - p6df::modules::go::init()
 - p6df::modules::go::langs()
 - p6df::modules::go::prompt::line()
-- p6df::modules::go::version()
 - p6df::prompt::gopath::line()
 - str str = p6_go_path_prompt_info()
 
