@@ -6,6 +6,7 @@
 #>
 ######################################################################
 p6df::modules::go::version() { echo "0.0.1" }
+
 ######################################################################
 #<
 #
@@ -13,7 +14,12 @@ p6df::modules::go::version() { echo "0.0.1" }
 #
 #>
 ######################################################################
-p6df::modules::go::deps()    { ModuleDeps=(syndbg/goenv) }
+p6df::modules::go::deps() {
+  ModuleDeps=(
+    p6m7g8/p6common
+    syndbg/goenv
+  )
+}
 
 ######################################################################
 #<
@@ -102,7 +108,7 @@ p6df::modules::go::goenv::init() {
     export HAS_GOENV=1
 
     p6df::util::path_if $GOENV_ROOT/bin
-    eval "$(goenv init - zsh)"
+    eval "$(p6_run_code goenv init - zsh)"
     p6df::util::path_if $GOPATH/bin
   fi
 }
@@ -122,13 +128,14 @@ p6df::prompt::gopath::line() {
 ######################################################################
 #<
 #
-# Function: p6df::prompt::go::line()
+# Function: p6df::modules::go::prompt::line()
 #
 #>
 ######################################################################
-p6df::prompt::go::line() {
+p6df::modules::go::prompt::line() {
 
   p6_go_prompt_info
+  p6_go_path_prompt_info
 }
 
 ######################################################################
@@ -145,7 +152,8 @@ p6_go_path_prompt_info() {
 
   local str=
   if ! p6_string_blank "$GOPATH"; then
-    str="go:       gopath=[$GOPATH] goroot=[$GOROOT]"
+    str="gopath:\t  $GOPATH
+goroot:\t  $GOROOT"
   fi
 
   p6_return_str "$str"
@@ -160,5 +168,6 @@ p6_go_path_prompt_info() {
 ######################################################################
 p6_go_prompt_info() {
 
+  echo -n "go:\t  "
   p6_lang_version "go"
 }
