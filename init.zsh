@@ -105,7 +105,7 @@ p6df::modules::go::init() {
 # Function: p6df::modules::go::goenv::init(dir)
 #
 #  Args:
-#	dir - 
+#	dir -
 #
 #>
 ######################################################################
