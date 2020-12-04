@@ -40,7 +40,7 @@ p6df::modules::go::langs() {
 
   # nuke the old one
   local previous=$(goenv install -l | tail -2 | head -1 | sed -e 's, *,,g')
-  pyenv uninstall -f $previous
+  goenv uninstall -f $previous
 
   # get the shiny one
   local latest=$(goenv install -l | tail -1 | sed -e 's, *,,g')
