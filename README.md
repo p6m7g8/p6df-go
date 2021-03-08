@@ -38,9 +38,11 @@
 
 - [Change Log](CHANGELOG.md)
 
-### Usage
+## Usage
 
-#### init.zsh:
+### p6df-go:
+
+#### p6df-go/init.zsh:
 
 - p6_go_prompt_info()
 - p6df::modules::go::deps()
