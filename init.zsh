@@ -165,7 +165,8 @@ p6df::modules::go::prompt::line() {
 ######################################################################
 p6_go_path_prompt_info() {
 
-  local str=
+  local str="goenv:\t  gopath=
+goenv:\t  gotroot="
   if ! p6_string_blank "$GOPATH"; then
     str="goenv:\t  gopath:$GOPATH
 goenv:\t  goroot:$GOROOT"
