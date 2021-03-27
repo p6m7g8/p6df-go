@@ -22,7 +22,8 @@ p6df::modules::go::deps() {
 p6df::modules::go::home::symlink() {
 
   if [ -n "$GOPATH" ]; then
-    ln -fs $P6_DFZ_SRC_DIR $GOPATH/src
+    echo ln -fs $P6_DFZ_SRC_DIR $GOPATH/src
+#    ln -fs $P6_DFZ_SRC_DIR $GOPATH/src
   fi
 }
 
