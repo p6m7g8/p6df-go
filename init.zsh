@@ -15,15 +15,30 @@ p6df::modules::go::deps() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::go::vscodes()
+#
+#>
+######################################################################
+p6df::modules::go::vscodes() {
+
+  # go
+  go get golang.org/x/tools/gopls
+  code --install-extension golang.go
+}
+
+######################################################################
+#<
+#
 # Function: p6df::modules::go::home::symlink()
 #
+#  Environment:	 GOPATH P6_DFZ_SRC_DIR
 #>
 ######################################################################
 p6df::modules::go::home::symlink() {
 
   if [ -n "$GOPATH" ]; then
     echo ln -fs $P6_DFZ_SRC_DIR $GOPATH/src
-#    ln -fs $P6_DFZ_SRC_DIR $GOPATH/src
+    #    ln -fs $P6_DFZ_SRC_DIR $GOPATH/src
   fi
 }
 
@@ -32,6 +47,7 @@ p6df::modules::go::home::symlink() {
 #
 # Function: p6df::modules::go::langs()
 #
+#  Environment:	 HEAD P6_DFZ_SRC_DIR
 #>
 ######################################################################
 p6df::modules::go::langs() {
@@ -95,6 +111,7 @@ p6df::modules::go::langs() {
 #
 # Function: p6df::modules::go::init()
 #
+#  Environment:	 P6_DFZ_SRC_DIR
 #>
 ######################################################################
 p6df::modules::go::init() {
@@ -110,6 +127,7 @@ p6df::modules::go::init() {
 #  Args:
 #	dir -
 #
+#  Environment:	 DISABLE_ENVS GOENV_ROOT GOPATH HAS_GOENV
 #>
 ######################################################################
 p6df::modules::go::goenv::init() {
@@ -162,6 +180,8 @@ p6df::modules::go::prompt::line() {
 #  Returns:
 #	str - str
 #
+#  Depends:	 p6_string
+#  Environment:	 GOPATH GOROOT
 #>
 ######################################################################
 p6_go_path_prompt_info() {
@@ -181,6 +201,7 @@ goenv:\t  goroot:$GOROOT"
 #
 # Function: p6_go_prompt_info()
 #
+#  Depends:	 p6_lang
 #>
 ######################################################################
 p6_go_prompt_info() {
