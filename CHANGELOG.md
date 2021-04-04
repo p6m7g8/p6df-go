@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/p6m7g8/p6df-go/compare/v2.1.0...v2.1.1) (2021-04-04)
+
+
+### Bug Fixes
+
+* **prompt:** standardize prompt ([#23](https://github.com/p6m7g8/p6df-go/issues/23)) ([cc6a244](https://github.com/p6m7g8/p6df-go/commit/cc6a244a6dba545ca9dd703fca4eebdd4bf70831))
+
+
+* **link:** remove rendundant symlinks; echo for now ([#24](https://github.com/p6m7g8/p6df-go/issues/24)) ([8db041b](https://github.com/p6m7g8/p6df-go/commit/8db041b71c774bbd88a651a99454afd73b9fcced))
+* **README:** updates generator ([#22](https://github.com/p6m7g8/p6df-go/issues/22)) ([8a30181](https://github.com/p6m7g8/p6df-go/commit/8a3018193e3ccc23754dcfe6aa48d60938a722ae))
+* **vscode:** splits vscode extensions to their languages ([#25](https://github.com/p6m7g8/p6df-go/issues/25)) ([b89fb98](https://github.com/p6m7g8/p6df-go/commit/b89fb9814c044d73605676185be3aa5cb62a0008))
+* Coc -> .github ([baadcf7](https://github.com/p6m7g8/p6df-go/commit/baadcf7119fdb3a625e362e9f347c330bf0de7df))
+
 ## [2.1.0](https://github.com/p6m7g8/p6df-go/compare/v2.0.0...v2.1.0) (2020-12-06)
 
 
